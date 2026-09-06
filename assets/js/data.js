@@ -29,8 +29,8 @@ const PORTFOLIO_DATA = {
       en: "Nov 23, 2026 – Mar 12, 2027 or Immediately (At least 4 months)"
     },
     internshipFormat: {
-      th: "On-site / Hybrid (กรุงเทพฯ & ปริมณฑล หรือ สกลนคร)",
-      en: "On-site / Hybrid (Bangkok Metropolitan Transit Zones or Sakon Nakhon)"
+      th: "On-site / Hybrid (กรุงเทพฯ & ปริมณฑล หรือ จังหวัดขอนแก่น)",
+      en: "On-site / Hybrid (Bangkok Metropolitan Transit Zones or Khon Kaen Province)"
     },
     targetRoles: {
       th: "Data Science, Data Analyst, BI & EDA Developer",
@@ -81,6 +81,18 @@ const PORTFOLIO_DATA = {
     ]
   },
 
+  educationLabels: {
+    sectionTitle: { th: "ประวัติการศึกษา", en: "Education" },
+    studentStatus: { th: "นิสิตปริญญาตรี ชั้นปีที่ 4", en: "Senior Undergraduate" },
+    gpaLabel: { th: "GPAX สะสม", en: "Cumulative GPA" },
+    viewTranscriptBtn: { th: "ดูทรานสคริปต์", en: "View Transcript" },
+    universityLabel: { th: "มหาวิทยาลัย:", en: "University:" },
+    facultyLabel: { th: "คณะ:", en: "Faculty:" },
+    departmentLabel: { th: "ภาควิชา:", en: "Department:" },
+    majorLabel: { th: "สาขาวิชา:", en: "Major:" },
+    relevantCourseworkTitle: { th: "รายวิชาสำคัญที่เกี่ยวข้อง", en: "Relevant Coursework" }
+  },
+
   education: {
     university: {
       th: "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร",
@@ -99,23 +111,23 @@ const PORTFOLIO_DATA = {
       en: "Bachelor of Science in Data Science (B.Sc. Data Science)"
     },
     yearLevel: {
-      th: "นิสิตชั้นปีที่ 4 (คาดว่าจะสำเร็จการศึกษา พ.ศ. 2570)",
-      en: "Senior Undergraduate (Expected Graduation: 2027)"
+      th: "นิสิตปริญญาตรี ชั้นปีที่ 4",
+      en: "Senior Undergraduate"
     },
     period: {
-      th: "2566 – ปัจจุบัน (2023 – Present)",
-      en: "2023 – Present (Expected: 2027)"
+      th: "2566 – ปัจจุบัน (คาดว่าจะสำเร็จการศึกษา: 2570)",
+      en: "2023 – Present (Expected Graduation: 2027)"
     },
     gpax: "3.66",
     relevantCourses: [
-      { th: "Exploratory Data Analysis & Statistics (การวิเคราะห์ข้อมูลเชิงสำรวจ)", en: "Exploratory Data Analysis & Applied Statistics" },
-      { th: "Business Intelligence & Data Visualization (ธุรกิจอัจฉริยะ)", en: "Business Intelligence & Data Visualization" },
-      { th: "Machine Learning for Data Science (การเรียนรู้ของเครื่อง)", en: "Machine Learning for Data Science" },
-      { th: "Data Mining & Knowledge Discovery (การทำเหมืองข้อมูล)", en: "Data Mining & Knowledge Discovery" },
-      { th: "Database Systems & SQL Design (ระบบฐานข้อมูลและ SQL)", en: "Database Systems & SQL Design" },
-      { th: "Data Warehousing & Data Pipelines", en: "Data Warehousing & Data Pipelines" },
-      { th: "Probability & Applied Statistics (ความน่าจะเป็นและสถิติ)", en: "Probability & Applied Statistics" },
-      { th: "Data Structures & Algorithms (โครงสร้างข้อมูลและอัลกอริทึม)", en: "Data Structures & Algorithms" }
+      { th: "การวิเคราะห์ข้อมูลเชิงสำรวจและสถิติประยุกต์", en: "Exploratory Data Analysis & Applied Statistics" },
+      { th: "ธุรกิจอัจฉริยะและการแสดงผลข้อมูล", en: "Business Intelligence & Data Visualization" },
+      { th: "การเรียนรู้ของเครื่องสำหรับวิทยาการข้อมูล", en: "Machine Learning for Data Science" },
+      { th: "การทำเหมืองข้อมูลและการค้นพบความรู้", en: "Data Mining & Knowledge Discovery" },
+      { th: "ระบบฐานข้อมูลและการออกแบบ SQL", en: "Database Systems & SQL Design" },
+      { th: "คลังข้อมูลและท่อส่งข้อมูล (Data Pipelines)", en: "Data Warehousing & Data Pipelines" },
+      { th: "ความน่าจะเป็นและสถิติประยุกต์", en: "Probability & Applied Statistics" },
+      { th: "โครงสร้างข้อมูลและขั้นตอนวิธี", en: "Data Structures & Algorithms" }
     ]
   },
 
