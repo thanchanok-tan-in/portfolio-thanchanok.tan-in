@@ -90,8 +90,8 @@
   function copyText(text, label) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(() => {
-        const msg = state.lang === 'th' 
-          ? `คัดลอก ${label}: ${text} สำเร็จ!` 
+        const msg = state.lang === 'th'
+          ? `คัดลอก ${label}: ${text} สำเร็จ!`
           : `Copied ${label}: ${text} to clipboard!`;
         showToast(msg, 'check');
       }).catch(() => fallbackCopy(text, label));
@@ -107,8 +107,8 @@
     input.select();
     document.execCommand('copy');
     document.body.removeChild(input);
-    const msg = state.lang === 'th' 
-      ? `คัดลอก ${label}: ${text} สำเร็จ!` 
+    const msg = state.lang === 'th'
+      ? `คัดลอก ${label}: ${text} สำเร็จ!`
       : `Copied ${label}: ${text} to clipboard!`;
     showToast(msg, 'check');
   }
@@ -117,7 +117,7 @@
   function setLanguage(newLang) {
     state.lang = newLang;
     localStorage.setItem('portfolio_lang', newLang);
-    
+
     // Update document title & html lang attribute
     document.documentElement.lang = newLang;
     if (newLang === 'th') {
@@ -137,14 +137,14 @@
     const nav = PORTFOLIO_DATA.ui.nav;
     document.getElementById('nav-brand-title').textContent = t(nav.brandTitle);
     document.getElementById('nav-brand-sub').textContent = t(nav.brandSubtitle);
-    
+
     document.getElementById('nav-link-about').textContent = t(nav.about);
     document.getElementById('nav-link-skills').textContent = t(nav.skills);
     document.getElementById('nav-link-projects').textContent = t(nav.projects);
     document.getElementById('nav-link-experience').textContent = t(nav.experience);
     document.getElementById('nav-link-honors').textContent = t(nav.honors);
     document.getElementById('nav-link-contact').textContent = t(nav.contact);
-    
+
     // Mobile nav links
     document.getElementById('mobile-link-about').textContent = t(nav.about);
     document.getElementById('mobile-link-skills').textContent = t(nav.skills);
@@ -611,8 +611,8 @@
       container.innerHTML = `
         <div class="space-y-4">
           ${data.activities.map(act => {
-            const certUrl = act.certificateLink || act.pdfLink || act.certificateUrl;
-            return `
+        const certUrl = act.certificateLink || act.pdfLink || act.certificateUrl;
+        return `
             <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/40 transition">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                 <h3 class="text-base sm:text-lg font-bold text-white">${t(act.event)}</h3>
@@ -639,7 +639,7 @@
               ` : ''}
             </div>
           `;
-          }).join('')}
+      }).join('')}
         </div>
       `;
     }
@@ -1098,9 +1098,9 @@
           <div class="flex items-center gap-2">
             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
             <span>
-              ${isTh 
-                ? 'ข้อมูลการศึกษาและผลการเรียนได้รับการตรวจสอบตามหลักสูตรวิทยาศาสตรบัณฑิต มหาวิทยาลัยเกษตรศาสตร์' 
-                : 'Academic records verified against Kasetsart University undergraduate curriculum standards.'}
+              ${isTh
+        ? 'ข้อมูลการศึกษาและผลการเรียนได้รับการตรวจสอบตามหลักสูตรวิทยาศาสตรบัณฑิต มหาวิทยาลัยเกษตรศาสตร์'
+        : 'Academic records verified against Kasetsart University undergraduate curriculum standards.'}
             </span>
           </div>
           <div class="font-mono text-cyan-400 font-semibold whitespace-nowrap">
