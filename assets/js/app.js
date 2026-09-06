@@ -248,14 +248,42 @@
 
     document.getElementById('about-bio-text').textContent = t(profile.bio);
 
-    // Education card
-    document.getElementById('edu-university').textContent = t(edu.university);
-    document.getElementById('edu-faculty').textContent = t(edu.faculty);
-    document.getElementById('edu-dept').textContent = t(edu.department);
-    document.getElementById('edu-major').textContent = t(edu.major);
-    document.getElementById('edu-year-level').textContent = t(edu.yearLevel);
-    document.getElementById('edu-period').textContent = t(edu.period);
-    document.getElementById('edu-gpax').textContent = edu.gpax;
+    // Education UI Labels
+    const lbls = PORTFOLIO_DATA.educationLabels;
+    if (lbls) {
+      const secTitleEl = document.getElementById('edu-section-title');
+      if (secTitleEl) secTitleEl.textContent = t(lbls.sectionTitle);
+      const gpaxLblEl = document.getElementById('edu-gpax-label');
+      if (gpaxLblEl) gpaxLblEl.textContent = t(lbls.gpaLabel);
+      const txBtnLblEl = document.getElementById('edu-transcript-btn-label');
+      if (txBtnLblEl) txBtnLblEl.textContent = t(lbls.viewTranscriptBtn);
+      const univLblEl = document.getElementById('edu-lbl-university');
+      if (univLblEl) univLblEl.textContent = t(lbls.universityLabel);
+      const facLblEl = document.getElementById('edu-lbl-faculty');
+      if (facLblEl) facLblEl.textContent = t(lbls.facultyLabel);
+      const deptLblEl = document.getElementById('edu-lbl-department');
+      if (deptLblEl) deptLblEl.textContent = t(lbls.departmentLabel);
+      const majorLblEl = document.getElementById('edu-lbl-major');
+      if (majorLblEl) majorLblEl.textContent = t(lbls.majorLabel);
+      const cwTitleEl = document.getElementById('edu-coursework-label');
+      if (cwTitleEl) cwTitleEl.textContent = t(lbls.relevantCourseworkTitle);
+    }
+
+    // Education card values
+    const univEl = document.getElementById('edu-university');
+    if (univEl) univEl.textContent = t(edu.university);
+    const facEl = document.getElementById('edu-faculty');
+    if (facEl) facEl.textContent = t(edu.faculty);
+    const deptEl = document.getElementById('edu-dept');
+    if (deptEl) deptEl.textContent = t(edu.department);
+    const majorEl = document.getElementById('edu-major');
+    if (majorEl) majorEl.textContent = t(edu.major);
+    const badgeEl = document.getElementById('edu-status-badge');
+    if (badgeEl) badgeEl.textContent = t(edu.yearLevel);
+    const periodEl = document.getElementById('edu-period');
+    if (periodEl) periodEl.textContent = t(edu.period);
+    const gpaxEl = document.getElementById('edu-gpax');
+    if (gpaxEl) gpaxEl.textContent = edu.gpax;
 
     // Relevant Coursework chips
     const coursesContainer = document.getElementById('edu-courses-container');
