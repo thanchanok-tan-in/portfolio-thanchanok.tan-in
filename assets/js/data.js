@@ -53,8 +53,8 @@ const PORTFOLIO_DATA = {
       linkedin: "https://www.linkedin.com/in/thanchanok-tan-in-464a52362/",
       github: "https://github.com/thanchanok-tan-in",
       location: {
-        th: "กรุงเทพฯ & ปริมณฑล (แนวรถไฟฟ้า BTS/MRT) / สกลนคร / ทั่วประเทศ (Hybrid/Remote)",
-        en: "Bangkok & Metro (BTS/MRT Transit Lines) / Sakon Nakhon / Nationwide (Hybrid/Remote)"
+        th: "กรุงเทพฯ & ปริมณฑล (แนวรถไฟฟ้า BTS/MRT) / ขอนแก่น / ทั่วประเทศ (Hybrid/On-site)",
+        en: "Bangkok & Metro (BTS/MRT Transit Lines) / Khon Kaen / Nationwide (Hybrid/On-site)"
       }
     },
     stats: [
