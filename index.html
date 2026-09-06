@@ -277,8 +277,6 @@
     html[data-theme="light"] #hero-cta-transcript *,
     html[data-theme="analytic-light"] #hero-cta-transcript,
     html[data-theme="analytic-light"] #hero-cta-transcript *,
-    html[data-theme="light"] #transcript-download-btn,
-    html[data-theme="light"] #transcript-download-btn *,
     html[data-theme="light"] #transcript-view-summary-btn.bg-\[\#006633\],
     html[data-theme="light"] #transcript-view-summary-btn.bg-\[\#006633\] *,
     html[data-theme="light"] #transcript-view-pdf-btn.bg-\[\#006633\],
@@ -1139,7 +1137,7 @@
           <div
             class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold shadow-inner">
             <span class="status-pulse-dot"></span>
-            <span id="hero-status-badge">🟢 พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4
+            <span id="hero-status-badge">พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4
               เดือน)</span>
           </div>
 
@@ -2005,15 +2003,6 @@
             </button>
           </div>
 
-          <!-- 3. Direct Download Button (Immediate download without opening new tab) -->
-          <a id="transcript-download-btn" href="./data/Document/1_Transcript Eng-Thai.pdf"
-            download="1_Transcript_Eng-Thai.pdf"
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#006633] hover:bg-[#005A36] text-white transition shadow-sm cursor-pointer"
-            title="Download Official Transcript PDF">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Download</span>
-          </a>
-
           <!-- Close Button -->
           <button id="close-transcript-modal-btn" type="button"
             class="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition"
@@ -2040,7 +2029,7 @@
               <span>Open PDF Fullscreen</span>
             </button>
           </div>
-          <iframe id="transcript-pdf-frame" src="./data/Document/1_Transcript Eng-Thai.pdf"
+          <iframe id="transcript-pdf-frame" src=".\assets\docs\1_Transcript Eng-Thai.pdf"
             class="w-full flex-1 border-0 bg-slate-900" title="Official Academic Transcript PDF (Thanchanok Tan-in)">
           </iframe>
         </div>
@@ -2215,7 +2204,7 @@
         }
 
         // 2. Transcript Modal & PDF Viewer Logic
-        const TRANSCRIPT_PDF = './data/Document/1_Transcript%20Eng-Thai.pdf';
+        const TRANSCRIPT_PDF = './assets/docs/1_Transcript%20Eng-Thai.pdf';
 
         function renderTranscriptSummary() {
           const pane = document.getElementById('transcript-summary-pane');
@@ -2337,13 +2326,6 @@
               <span>${isTh ? 'เปิดดูเอกสาร PDF ฉบับเต็ม' : 'Switch to PDF Viewer'}</span>
             </button>
 
-            <div class="flex items-center gap-2">
-              <a id="summary-direct-download-btn" href="${TRANSCRIPT_PDF}" download="1_Transcript_Eng-Thai.pdf"
-                 class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#006633] hover:bg-[#005A36] text-white transition cursor-pointer">
-                <i data-lucide="download" class="w-4 h-4"></i>
-                <span>${isTh ? 'ดาวน์โหลด PDF' : 'Download PDF'}</span>
-              </a>
-            </div>
           </div>
         `;
 
@@ -2357,18 +2339,6 @@
               if (pdfBtn) pdfBtn.click();
             });
           }
-          const summaryDlBtn = document.getElementById('summary-direct-download-btn');
-          if (summaryDlBtn) {
-            summaryDlBtn.addEventListener('click', (e) => {
-              const link = document.createElement('a');
-              link.href = TRANSCRIPT_PDF;
-              link.download = '1_Transcript_Eng-Thai.pdf';
-              document.body.appendChild(link);
-              link.click();
-              link.remove();
-              e.preventDefault();
-            });
-          }
         }
 
         function setupTranscriptModal() {
@@ -2378,29 +2348,12 @@
           const viewPdfBtn = document.getElementById('transcript-view-pdf-btn');
           const viewSummaryBtn = document.getElementById('transcript-view-summary-btn');
           const closeBtn = document.getElementById('close-transcript-modal-btn');
-          const downloadBtn = document.getElementById('transcript-download-btn');
           const fallbackBtn = document.getElementById('transcript-pdf-fullscreen-btn');
 
           if (fallbackBtn) {
             fallbackBtn.addEventListener('click', (e) => {
               e.preventDefault();
               window.open(TRANSCRIPT_PDF, '_blank');
-            });
-          }
-
-          // Direct download without opening new tab
-          if (downloadBtn) {
-            downloadBtn.href = TRANSCRIPT_PDF;
-            downloadBtn.setAttribute('download', '1_Transcript_Eng-Thai.pdf');
-            downloadBtn.removeAttribute('target');
-            downloadBtn.addEventListener('click', (e) => {
-              const link = document.createElement('a');
-              link.href = TRANSCRIPT_PDF;
-              link.download = '1_Transcript_Eng-Thai.pdf';
-              document.body.appendChild(link);
-              link.click();
-              link.remove();
-              e.preventDefault();
             });
           }
 
