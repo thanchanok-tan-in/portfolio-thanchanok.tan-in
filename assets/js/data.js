@@ -52,7 +52,6 @@ const PORTFOLIO_DATA = {
       phoneDisplay: "062-539-3445",
       linkedin: "https://www.linkedin.com/in/thanchanok-tan-in-464a52362/",
       github: "https://github.com/thanchanok-tan-in",
-      jobsdb: "https://th.jobsdb.com/profile/",
       location: {
         th: "กรุงเทพฯ & ปริมณฑล (แนวรถไฟฟ้า BTS/MRT) / สกลนคร / ทั่วประเทศ (Hybrid/Remote)",
         en: "Bangkok & Metro (BTS/MRT Transit Lines) / Sakon Nakhon / Nationwide (Hybrid/Remote)"
