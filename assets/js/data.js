@@ -1036,6 +1036,8 @@ const PORTFOLIO_DATA = {
         nameLabel: { th: "ชื่อผู้ติดต่อ / บริษัท", en: "Your Name / Company" },
         emailLabel: { th: "อีเมลสำหรับติดต่อกลับ", en: "Contact Email" },
         subjectLabel: { th: "หัวข้อการติดต่อ", en: "Subject" },
+        linkLabel: { th: "แนบลิงก์ที่เกี่ยวข้อง (ไม่บังคับ)", en: "Attach Relevant Links (Optional)" },
+        linkPlaceholder: { th: "https://example.com/project-or-doc", en: "https://example.com/project-or-doc" },
         messageLabel: { th: "รายละเอียดข้อความ / ข้อเสนอการฝึกงาน", en: "Message / Internship Offer" },
         copiedToast: { th: "คัดลอกข้อมูลเรียบร้อยแล้ว!", en: "Copied to clipboard!" }
       }
