@@ -75,7 +75,7 @@ const PORTFOLIO_DATA = {
         subtext: { th: "ENGiHack 2026 (BDI & THackle)", en: "ENGiHack 2026 Energy Hackathon" }
       },
       {
-        value: "5+",
+        value: "4",
         label: { th: "โปรเจกต์ Data & BI", en: "Data & BI Projects" },
         subtext: { th: "ML, Looker Studio, Power BI", en: "ML, Looker Studio, Power BI" }
       }
