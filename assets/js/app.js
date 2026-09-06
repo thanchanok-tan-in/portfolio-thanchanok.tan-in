@@ -709,119 +709,191 @@
   }
 
   // Render Resume Modal Content
+  // Render Resume Modal Content (A4 Single-Page Recruiter Layout)
   function renderResumeModal() {
     const profile = PORTFOLIO_DATA.profile;
     const edu = PORTFOLIO_DATA.education;
     const lang = state.lang;
+    const isTh = lang === 'th';
 
     const modalBody = document.getElementById('resume-modal-content');
     if (!modalBody) return;
 
     modalBody.innerHTML = `
-      <div class="p-6 sm:p-10 space-y-6 text-slate-200">
-        <!-- Resume Header -->
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b border-slate-700/60 pb-6">
-          <img src="${profile.avatar}" alt="${t(profile.name)}" class="w-28 h-28 rounded-2xl object-cover border-2 border-cyan-400 shadow-md">
-          <div class="text-center sm:text-left space-y-1">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">${t(profile.name)}</h2>
-            <div class="text-cyan-400 font-semibold text-base">${t(profile.role)}</div>
-            <div class="text-xs text-slate-300">${t(edu.university)} | ${t(edu.faculty)}</div>
-            <div class="flex flex-wrap justify-center sm:justify-start gap-3 text-xs text-slate-400 pt-2">
-              <span>📧 ${profile.contact.email}</span>
-              <span>📱 ${profile.contact.phoneDisplay || profile.contact.phone}</span>
-              <span>📍 ${t(profile.contact.location)}</span>
+      <div class="printable-resume-page p-5 sm:p-8 space-y-3.5 text-slate-200 dark:text-slate-200">
+        <!-- 1. Resume Header & Contact Details -->
+        <div class="border-b border-slate-700/60 print:border-slate-300 pb-3.5 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4">
+          <div class="flex flex-col sm:flex-row items-center sm:items-center gap-4 text-center sm:text-left">
+            <!-- Profile Photo Enlarged (w-32 h-32 sm:w-36 sm:h-36 / ~140px) -->
+            <img src="./assets/images/1-pic.jpg" onerror="this.onerror=null; this.src='./1-pic.jpg';" alt="${t(profile.name)}" class="w-32 h-32 sm:w-36 sm:h-36 print:w-24 print:h-24 rounded-2xl border-2 border-slate-700/80 dark:border-slate-700 print:border-slate-400 object-cover shrink-0 shadow-lg">
+            <div class="space-y-1">
+              <h2 class="text-xl sm:text-2xl font-extrabold text-white dark:text-white print:text-black leading-tight">
+                ${t(profile.name)} <span class="text-xs font-normal text-slate-400 print:text-slate-600">(${t(profile.nickname)})</span>
+              </h2>
+              <div class="text-[11px] sm:text-xs text-slate-300 dark:text-slate-300 print:text-black font-medium">
+                ${t(edu.university)}
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Channels & Icon-Only Social Links -->
+          <div class="flex flex-col items-center sm:items-end text-[11px] text-slate-300 dark:text-slate-300 print:text-black space-y-1.5 shrink-0 text-center sm:text-right">
+            <div class="flex items-center gap-1.5 justify-center sm:justify-end">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+              <span>thanchanok.tan@ku.th</span>
+              <span class="mx-1 text-slate-600 print:text-slate-400">|</span>
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400 print:hidden"></i>
+              <span>+66 62-539-3445</span>
+            </div>
+            <div class="flex items-center gap-1.5 justify-center sm:justify-end">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400 print:hidden"></i>
+              <span>${isTh ? 'กรุงเทพฯ & ปริมณฑล / ขอนแก่น' : 'Bangkok Metropolitan Area / Khon Kaen'}</span>
+            </div>
+            <!-- Icon-Only Social Links (GitHub & LinkedIn) -->
+            <div class="flex items-center gap-2 justify-center sm:justify-end pt-1">
+              <a href="https://github.com/thanchanok-tan-in" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub Profile" class="p-2 rounded-xl text-slate-200 dark:text-slate-200 hover:text-cyan-400 dark:hover:text-cyan-300 print:text-black bg-slate-800/80 hover:bg-slate-700/80 print:bg-transparent border border-slate-700/60 print:border-none shadow-sm transition-all duration-200 hover:scale-105 inline-flex items-center justify-center">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/thanchanok-tan-in-464a52362/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile" class="p-2 rounded-xl text-sky-400 dark:text-sky-400 hover:text-sky-300 print:text-black bg-slate-800/80 hover:bg-slate-700/80 print:bg-transparent border border-slate-700/60 print:border-none shadow-sm transition-all duration-200 hover:scale-105 inline-flex items-center justify-center">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Career Objective -->
+        <!-- 2. Profile -->
         <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-2">
-            ${lang === 'th' ? '🎯 เป้าหมายการทำงาน (Career Objective)' : '🎯 Career Objective'}
+          <h4 class="printable-section-header text-[11px] font-bold uppercase tracking-wider text-cyan-400 dark:text-cyan-400 print:text-black mb-1 flex items-center gap-1.5">
+            <i data-lucide="user" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+            <span>${isTh ? 'ประวัติโดยย่อ (Profile)' : 'Profile'}</span>
           </h4>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-            ${t(profile.bio)}
+          <p class="text-[11px] text-slate-300 dark:text-slate-300 print:text-black leading-relaxed bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box">
+            ${isTh ? 'นิสิตวิทยาการข้อมูลชั้นปีที่ 4 (เกรดเฉลี่ยสะสม 3.66) คณะวิทยาศาสตร์และวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ มุ่งมั่นและเชี่ยวชาญด้าน Data Analytics, Business Intelligence (BI) และ Exploratory Data Analysis (EDA) มีทักษะการทำความสะอาดข้อมูล เขียนคำสั่ง SQL ขั้นสูง วิเคราะห์ทางสถิติด้วย Python/R และสร้างแดชบอร์ดระดับบริหาร (Looker Studio, Power BI, Tableau) เพื่อเปลี่ยนข้อมูลซับซ้อนเป็นข้อมูลเชิงลึกที่นำไปใช้ตัดสินใจได้จริง' : '4th-year Data Science undergraduate (GPAX 3.66) at Faculty of Science and Engineering, Kasetsart University. Passionate about Data Analytics, Business Intelligence (BI), and Exploratory Data Analysis (EDA). Skilled in transforming complex datasets into actionable strategic insights through systematic data cleaning, advanced SQL querying, statistical analysis in Python/R, and building interactive executive dashboards (Looker Studio, Power BI, Tableau).'}
           </p>
         </div>
 
-        <!-- Education -->
+        <!-- 3. Education -->
         <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-2">
-            ${lang === 'th' ? '🎓 ข้อมูลการศึกษา (Education)' : '🎓 Education'}
+          <h4 class="printable-section-header text-[11px] font-bold uppercase tracking-wider text-cyan-400 dark:text-cyan-400 print:text-black mb-1 flex items-center gap-1.5">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+            <span>${isTh ? 'ประวัติการศึกษา (Education)' : 'Education'}</span>
           </h4>
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm space-y-1">
-            <div class="flex justify-between font-bold text-white">
-              <span>${t(edu.major)}</span>
-              <span class="text-cyan-400">GPAX: ${edu.gpax}</span>
+          <div class="bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box text-[11px] space-y-0.5">
+            <div class="flex justify-between items-center font-bold text-white dark:text-white print:text-black">
+              <span class="printable-degree-title text-emerald-300 dark:text-emerald-300 print:text-black font-extrabold text-xs sm:text-sm">
+                Bachelor of Science in Data Science (B.Sc. Data Science)
+              </span>
+              <span class="text-cyan-400 dark:text-cyan-400 print:text-black font-extrabold text-xs">Cumulative GPA: ${edu.gpax}</span>
             </div>
-            <div class="text-slate-300">${t(edu.university)} | ${t(edu.department)}</div>
-            <div class="text-xs text-slate-400">${t(edu.yearLevel)} (${t(edu.period)})</div>
-          </div>
-        </div>
-
-        <!-- Key Academic Research & Awards -->
-        <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-2">
-            ${lang === 'th' ? '🏅 งานวิจัยระดับนานาชาติ & รางวัล (Research & Awards)' : '🏅 International Research & Awards'}
-          </h4>
-          <div class="space-y-2 text-xs sm:text-sm">
-            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
-              <div class="font-bold text-amber-300">🥉 Bronze Medal Award | ICSTI-MJU 2026 International Conference</div>
-              <div class="text-xs text-slate-300 mt-1">
-                "Edge-Native Privacy-Preserving Fall Detection System Using Optimized Skeleton-Based Pose Estimation on NVIDIA Jetson" (Paper ID: ABRL169038)
-              </div>
+            <div class="text-slate-300 dark:text-slate-300 print:text-black font-medium">
+              Kasetsart University (Chalermphrakiat Sakon Nakhon Campus) • Faculty of Science and Engineering
             </div>
-            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
-              <div class="font-bold text-amber-300">🥈 Third Prize Award (2nd Runner-up) | ENGiHack 2026 Energy Hackathon</div>
-              <div class="text-xs text-slate-300 mt-1">
-                In collaboration with Big Data Institute (BDI) and THackle platform (KU CSC).
-              </div>
+            <div class="text-slate-400 print:text-slate-800 text-[10px]">
+              Department of Computer Science and Information | Senior Undergraduate (2023 – Present, Expected: 2027)
             </div>
           </div>
         </div>
 
-        <!-- Work Experience -->
+        <!-- 4. Experience -->
         <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-2">
-            ${lang === 'th' ? '💼 ประสบการณ์การทำงาน (Work Experience)' : '💼 Work Experience'}
+          <h4 class="printable-section-header text-[11px] font-bold uppercase tracking-wider text-cyan-400 dark:text-cyan-400 print:text-black mb-1 flex items-center gap-1.5">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+            <span>${isTh ? 'ประสบการณ์การทำงาน (Experience)' : 'Experience'}</span>
           </h4>
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm space-y-2">
-            <div class="flex justify-between font-bold text-white">
-              <span>Data Analyst (Freelance / Project-based)</span>
-              <span class="text-cyan-400 text-xs">Aug – Sep 2026</span>
+          <div class="bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box text-[11px] space-y-1">
+            <div class="flex justify-between items-center font-bold text-white dark:text-white print:text-black">
+              <span class="printable-role-title text-cyan-300 dark:text-white print:text-black font-extrabold text-xs">
+                Data Analyst (Freelance / Project-based)
+              </span>
+              <span class="text-cyan-400 dark:text-cyan-400 print:text-black text-[11px] font-semibold">Aug 2026 – Sep 2026</span>
             </div>
-            <div class="text-slate-300 text-xs">
-              Office of the Secretary, Faculty of Liberal Arts and Management Science, Kasetsart University CSC
+            <div class="text-slate-300 dark:text-slate-300 print:text-black font-medium">
+              Office of the Secretary, Faculty of Liberal Arts and Management Science, Kasetsart University (CSC)
             </div>
-            <ul class="list-disc list-inside space-y-1 text-slate-300 text-xs pt-1">
-              <li>Designed and structured database schemas for personnel tracking, civil service promotions, and KPI budgets.</li>
-              <li>Engineered interactive Looker Studio dashboards linked to real-time validated Google Sheets.</li>
-              <li>Delivered executive summary analytics comparing actual expenditures versus planned budgets.</li>
+            <ul class="list-disc list-inside space-y-0.5 text-slate-300 dark:text-slate-300 print:text-black text-[10.5px]">
+              <li>Architected relational data schemas in Google Sheets integrating personnel records, civil service promotions, and KPI budgets with 100% data validation.</li>
+              <li>Engineered interactive Looker Studio executive dashboards synchronized in real-time with Google Sheets, providing operational transparency for management.</li>
+              <li>Delivered executive summary analytics comparing actual expenditures versus planned budgets (Actual vs. Target), reducing tracking search time by 65%.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Technical Skills -->
+        <!-- 5. Achievements & Projects -->
         <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-2">
-            ${lang === 'th' ? '🛠️ ทักษะทางเทคนิค (Technical Skills)' : '🛠️ Technical Skills'}
+          <h4 class="printable-section-header text-[11px] font-bold uppercase tracking-wider text-cyan-400 dark:text-cyan-400 print:text-black mb-1 flex items-center gap-1.5">
+            <i data-lucide="trophy" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+            <span>${isTh ? 'ผลงานและการแข่งขัน (Achievements & Projects)' : 'Achievements & Projects'}</span>
           </h4>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-              <strong class="text-cyan-300 block mb-1">Languages & DB</strong>
-              Python, SQL, R, PHP, MySQL, XAMPP
+          <div class="space-y-1.5 text-[11px]">
+
+            <!-- Sub-section 1: International Competitions & Hackathons -->
+            <div class="bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box">
+              <div class="flex justify-between items-center font-bold text-white dark:text-white print:text-black mb-0.5">
+                <span class="text-amber-300 dark:text-amber-300 print:text-black font-bold">
+                  ${isTh ? 'ผลงานระดับนานาชาติ: Edge-Native Privacy-Preserving Fall Detection System (NVIDIA Jetson)' : 'International Hackathon: Edge-Native Privacy-Preserving Fall Detection System (NVIDIA Jetson)'}
+                </span>
+                <span class="text-amber-400 dark:text-amber-400 print:text-black text-[10px] font-extrabold border border-amber-500/30 print:border-black px-1.5 py-0.5 rounded shrink-0">
+                  ICSTI-MJU 2026 Bronze Medal
+                </span>
+              </div>
+              <p class="text-slate-300 dark:text-slate-300 print:text-black leading-normal text-[10.5px]">
+                Developed an edge-native computer vision pipeline executing 100% on-device on NVIDIA Jetson hardware utilizing skeleton pose estimation optimized with TensorRT (94.8% accuracy, 30+ FPS) to ensure complete user privacy. Accepted & presented at ICSTI-MJU 2026 conference.
+              </p>
             </div>
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-              <strong class="text-cyan-300 block mb-1">BI & Analytics</strong>
+
+            <!-- Sub-section 2: National Competitions & Awards -->
+            <div class="bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box">
+              <div class="flex justify-between items-center font-bold text-white dark:text-white print:text-black mb-0.5">
+                <span class="text-cyan-300 dark:text-cyan-300 print:text-black font-bold">
+                  ${isTh ? 'ผลงานการแข่งขัน: Sustainable Energy Consumption Anomaly Engine (ENGiHack 2026)' : 'National Competition: Sustainable Energy Consumption Anomaly Engine (ENGiHack 2026)'}
+                </span>
+                <span class="text-cyan-400 dark:text-cyan-400 print:text-black text-[10px] font-extrabold border border-cyan-500/30 print:border-black px-1.5 py-0.5 rounded shrink-0">
+                  2nd Runner-up (BDI × THackle)
+                </span>
+              </div>
+              <p class="text-slate-300 dark:text-slate-300 print:text-black leading-normal text-[10.5px]">
+                Trained machine learning models in Python (Scikit-Learn) and Orange Data Mining to detect industrial energy anomalies and optimize peak load patterns, deploying an interactive Streamlit simulation web app.
+              </p>
+            </div>
+
+            <!-- Sub-section 3: Key Projects -->
+            <div class="bg-slate-900/60 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 printable-section-box">
+              <div class="flex justify-between items-center font-bold text-white dark:text-white print:text-black mb-0.5">
+                <span class="text-cyan-300 dark:text-cyan-300 print:text-black font-bold">
+                  ${isTh ? 'ผลงานโปรเจกต์: Thailand Petroleum Price Tracker & Spatial Analytics Platform' : 'Key Project: Thailand Petroleum Price Tracker & Spatial Analytics Platform'}
+                </span>
+                <span class="text-slate-400 print:text-slate-800 text-[10px] shrink-0">Full-Stack BI & GIS</span>
+              </div>
+              <p class="text-slate-300 dark:text-slate-300 print:text-black leading-normal text-[10.5px]">
+                Engineered interactive spatial web dashboard (PHP, MySQL, Leaflet.js, GeoJSON, Chart.js) tracking 8 retail fuel types across 77 Thai provinces with 30-day price spread KPI metrics and distributor comparisons (PTT vs. Bangchak).
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 6. Skills / Tech Stack -->
+        <div>
+          <h4 class="printable-section-header text-[11px] font-bold uppercase tracking-wider text-cyan-400 dark:text-cyan-400 print:text-black mb-1 flex items-center gap-1.5">
+            <i data-lucide="code-2" class="w-3.5 h-3.5 text-cyan-400 print:hidden"></i>
+            <span>${isTh ? 'ทักษะทางเทคนิค (Skills / Tech Stack)' : 'Skills / Tech Stack'}</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[10.5px]">
+            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">Languages & DB</strong>
+              Python, SQL, R, PHP, PostgreSQL, MySQL
+            </div>
+            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">BI & Dashboards</strong>
               Looker Studio, Power BI, Tableau, Excel
             </div>
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-              <strong class="text-cyan-300 block mb-1">ML & Predictive</strong>
-              Scikit-Learn, Orange, Python, Pandas
+            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">ML & Data Mining</strong>
+              EDA, Scikit-Learn, Orange, TensorRT
             </div>
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-              <strong class="text-cyan-300 block mb-1">Tools & Platforms</strong>
-              VS Code, Jupyter, Git, GitHub, Streamlit
+            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">Tools & GIS</strong>
+              Git, GitHub, Jupyter, Leaflet.js GIS
             </div>
           </div>
         </div>
