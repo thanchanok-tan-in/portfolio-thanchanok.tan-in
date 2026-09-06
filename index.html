@@ -931,15 +931,15 @@
       flex-shrink: 0 !important;
     }
 
-    .hero-cta-group {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      white-space: nowrap !important;
-    }
+    @media (min-width: 640px) {
+      .hero-cta-group {
+        white-space: nowrap !important;
+      }
 
-    .hero-cta-group>* {
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
+      .hero-cta-group>* {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+      }
     }
   </style>
 </head>
@@ -1178,24 +1178,24 @@
               4 เดือน)</span>
           </div>
 
-          <!-- Hero Action Buttons (Single-Line Uniform Height & Styling, Exactly 3 Buttons) -->
+          <!-- Hero Action Buttons (Responsive Layout: Vertical stack on Mobile, Horizontal row on Desktop) -->
           <div
-            class="hero-cta-group flex flex-nowrap overflow-x-auto lg:overflow-x-visible items-center justify-start gap-2.5 pt-2 pb-1 scrollbar-none">
+            class="hero-cta-group flex flex-col w-full max-w-xs mx-auto gap-3 sm:flex-row sm:w-auto sm:max-w-none sm:mx-0 sm:gap-4 items-center justify-center lg:justify-start pt-2 pb-1">
             <!-- 1. Explore Projects -->
             <a href="#projects" id="hero-cta-projects"
-              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
+              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto shrink-0">
               <i data-lucide="layers" class="w-4 h-4 shrink-0"></i>
               <span id="hero-cta-projects-text">ชมผลงานโปรเจกต์</span>
             </a>
             <!-- 2. Contact Me -->
             <a href="#contact" id="hero-cta-contact"
-              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-slate-800/90 hover:bg-slate-700 text-white border border-slate-700 hover:border-cyan-500/40 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
+              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-slate-800/90 hover:bg-slate-700 text-white border border-slate-700 hover:border-cyan-500/40 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto shrink-0">
               <i data-lucide="mail" class="w-4 h-4 text-cyan-400 shrink-0"></i>
               <span id="hero-cta-contact-text">ติดต่อฝึกงาน</span>
             </a>
             <!-- 3. Official Academic Transcript (GPAX 3.66) -->
             <button id="hero-cta-transcript" type="button"
-              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#006633] hover:bg-[#005028] text-white border border-[#006633]/60 shadow-md shadow-emerald-950/20 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
+              class="h-11 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#006633] hover:bg-[#005028] text-white border border-[#006633]/60 shadow-md shadow-emerald-950/20 transition active:scale-95 inline-flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto shrink-0"
               title="View Academic Transcript (GPAX 3.66)">
               <i data-lucide="graduation-cap" class="w-4 h-4 text-white shrink-0"></i>
               <span id="hero-cta-transcript-text">ทรานสคริปต์ (GPAX 3.66)</span>
