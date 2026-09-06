@@ -21,8 +21,8 @@ const PORTFOLIO_DATA = {
       en: "Data Science & Analytics Intern"
     },
     statusBadge: {
-      th: "🟢 พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4 เดือน)",
-      en: "🟢 Available for Internship (Nov 23, 2026 – Mar 12, 2027 or Immediately | Min 4 Months)"
+      th: "พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4 เดือน)",
+      en: "Available for Internship (Nov 23, 2026 – Mar 12, 2027 or Immediately | Min 4 Months)"
     },
     internshipPeriod: {
       th: "23 พฤศจิกายน 2569 – 12 มีนาคม 2570 หรือ ทันที (ระยะเวลาอย่างน้อย 4 เดือน)",
@@ -122,7 +122,7 @@ const PORTFOLIO_DATA = {
 
   // Academic Transcript Details
   transcript: {
-    pdfUrl: "./data/Document/1_Transcript Eng-Thai.pdf",
+    pdfUrl: "./assets/docs/1_Transcript Eng-Thai.pdf",
     title: {
       th: "ใบแสดงผลการเรียนระดับปริญญาตรี (Academic Transcript)",
       en: "Official Undergraduate Academic Transcript Summary"
@@ -978,7 +978,7 @@ const PORTFOLIO_DATA = {
       langSwitch: { th: "English 🇺🇸", en: "ไทย 🇹🇭" }
     },
     hero: {
-      badge: { th: "🟢 พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที)", en: "🟢 Available for Internship 2026-2027" },
+      badge: { th: "พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที)", en: "Available for Internship 2026-2027" },
       greeting: { th: "สวัสดีค่ะ, ฉันชื่อ", en: "Hello, I am" },
       subGreeting: { th: "(ชื่อเล่น: แบม)", en: "(Nickname: Bam)" },
       roleTag: { th: "นิสิตวิทยาการข้อมูล ชั้นปีที่ 4 | ม.เกษตรศาสตร์", en: "4th-Year Data Science Undergraduate | Kasetsart University" },
