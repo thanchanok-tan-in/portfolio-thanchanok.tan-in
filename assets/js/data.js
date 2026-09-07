@@ -33,16 +33,16 @@ const PORTFOLIO_DATA = {
       en: "On-site / Hybrid (Bangkok Metropolitan Transit Zones or Khon Kaen Province)"
     },
     targetRoles: {
-      th: "Data Science, Data Analyst, BI & EDA Developer",
-      en: "Data Science, Data Analyst, BI & EDA Developer"
+      th: "Data Science, Data Analyst, AI & BI Developer",
+      en: "Data Science, Data Analyst, AI & BI Developer"
     },
     headline: {
-      th: "นิสิตชั้นปีที่ 4 สาขาวิชาวิทยาการข้อมูล ม.เกษตรศาสตร์ มีความรู้ด้าน Exploratory Data Analysis (EDA), Business Intelligence (BI Dashboards) และการวิเคราะห์ข้อมูลเชิงทำนาย",
-      en: "4th-Year Data Science Undergraduate at Kasetsart University Possesses knowledge of Exploratory Data Analysis (EDA), Business Intelligence (BI Dashboards), and Predictive Analytics"
+      th: "นิสิตชั้นปีที่ 4 สาขาวิชาวิทยาการข้อมูล ม.เกษตรศาสตร์ มีความเชี่ยวชาญด้าน Exploratory Data Analysis (EDA), Business Intelligence (BI Dashboards), Machine Learning และการประยุกต์ใช้ AI & Antigravity",
+      en: "4th-Year Data Science Undergraduate at Kasetsart University Possesses expertise in Exploratory Data Analysis (EDA), Business Intelligence (BI Dashboards), Machine Learning, and AI & Antigravity Workflows"
     },
     bio: {
-      th: "นิสิตวิทยาการข้อมูลชั้นปีที่ 4 (เกรดเฉลี่ยสะสม 3.66) คณะวิทยาศาสตร์และวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วข.สกลนคร มีความมุ่งมั่นและสนใจเป็นพิเศษในด้านวิทยาการข้อมูล, การวิเคราะห์ข้อมูลเชิงสำรวจ (EDA) และระบบธุรกิจอัจฉริยะ (BI) มีทักษะในการเปลี่ยนชุดข้อมูลที่ซับซ้อนให้เป็นข้อมูลเชิงลึกที่นำไปใช้ประโยชน์ได้จริง ผ่านกระบวนการทำความสะอาดข้อมูลอย่างเป็นระบบ, การเขียนคำสั่ง SQL ขั้นสูง, การวิเคราะห์ทางสถิติด้วยภาษา Python และการสร้างแดชบอร์ดแบบโต้ตอบ (เช่น Google Looker Studio, Power BI, Tableau) นอกจากนี้ ยังมีความสามารถในการประยุกต์ใช้อัลกอริทึม Machine Learning เพื่อค้นหารูปแบบของข้อมูลและสนับสนุนการตัดสินใจโดยอาศัยข้อมูลเป็นหลัก",
-      en: "4th-year Data Science undergraduate (GPAX 3.66) at Faculty of Science and Engineering, Kasetsart University (CSC). highly motivated and particularly interested in data science, exploratory data analysis (EDA), and business intelligence (BI). Possesses skills in transforming complex datasets into actionable insights through systematic data cleaning processes, advanced SQL querying, statistical analysis with Python, and the creation of interactive dashboards (e.g., Google Looker Studio, Power BI, Tableau). Additionally, capable of applying Machine Learning algorithms to uncover data patterns and support data-driven decisions based on experience."
+      th: "นิสิตวิทยาการข้อมูลชั้นปีที่ 4 (เกรดเฉลี่ยสะสม 3.66) คณะวิทยาศาสตร์และวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วข.สกลนคร มีความมุ่งมั่นและสนใจเป็นพิเศษในด้านวิทยาการข้อมูล, การวิเคราะห์ข้อมูลเชิงสำรวจ (EDA), ระบบธุรกิจอัจฉริยะ (BI) และการประยุกต์ใช้เทคโนโลยี AI สมัยใหม่ มีทักษะในการเปลี่ยนชุดข้อมูลที่ซับซ้อนให้เป็นข้อมูลเชิงลึกที่นำไปใช้ประโยชน์ได้จริง ผ่านกระบวนการทำความสะอาดข้อมูลอย่างเป็นระบบ, การเขียนคำสั่ง SQL ขั้นสูง, การวิเคราะห์ทางสถิติด้วยภาษา Python, การพัฒนา Edge AI & Machine Learning ตลอดจนการใช้แพลตฟอร์ม Google Antigravity และโมเดล AI ในการยกระดับการพัฒนาซอฟต์แวร์และการวิเคราะห์ข้อมูลอย่างรวดเร็ว",
+      en: "4th-year Data Science undergraduate (GPAX 3.66) at Faculty of Science and Engineering, Kasetsart University (CSC). Highly motivated in data science, exploratory data analysis (EDA), business intelligence (BI), and modern AI application. Skilled in transforming complex datasets into actionable insights through systematic data cleaning processes, advanced SQL querying, statistical analysis with Python, Edge AI & Machine Learning development, and leveraging Google Antigravity and AI platforms to accelerate software engineering and data analytics."
     },
     avatar: "./assets/images/1-pic.jpg",
     avatarFallback: "./1-pic.jpg",
@@ -74,9 +74,9 @@ const PORTFOLIO_DATA = {
         subtext: { th: "ENGiHack 2026 (BDI & THackle)", en: "ENGiHack 2026 Energy Hackathon" }
       },
       {
-        value: "4",
-        label: { th: "โปรเจกต์ Data & BI", en: "Data & BI Projects" },
-        subtext: { th: "ML, Looker Studio, Power BI", en: "ML, Looker Studio, Power BI" }
+        value: "4+",
+        label: { th: "โปรเจกต์ Data & AI", en: "Data & AI Projects" },
+        subtext: { th: "ML, BI, Edge AI & Antigravity", en: "ML, BI, Edge AI & Antigravity" }
       }
     ]
   },
@@ -453,6 +453,75 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
+      id: "ai-agentic",
+      category: {
+        th: "AI & เครื่องมือพัฒนาเอเจนต์อัจฉริยะ",
+        en: "AI Engineering & Agentic Development"
+      },
+      shortTitle: {
+        th: "AI & Agentic Development",
+        en: "AI & Agentic Development"
+      },
+      badge: {
+        th: "AI & Automation",
+        en: "AI & Automation"
+      },
+      summary: {
+        th: "การประยุกต์ใช้ Google Antigravity (Agentic AI IDE), Edge AI & TensorRT บนบอร์ดประมวลผล NVIDIA Jetson และเทคนิค Prompt Engineering ในการพัฒนาและวิเคราะห์ข้อมูล",
+        en: "Leveraging Google Antigravity (Agentic AI IDE), Edge AI & TensorRT on NVIDIA Jetson, and Prompt Engineering for rapid intelligent workflows, real-time computer vision, and predictive systems."
+      },
+      icon: "sparkles",
+      keyTools: ["Google Antigravity", "Edge AI (NVIDIA Jetson)", "TensorRT", "Prompt Engineering", "Agentic Workflows"],
+      items: [
+        {
+          id: "antigravity-agentic",
+          name: "Google Antigravity (Agentic AI)",
+          tag: "Agentic Coding",
+          icon: "bot",
+          summary: {
+            th: "ใช้งานแพลตฟอร์ม Google Antigravity ในการพัฒนาซอฟต์แวร์และงานข้อมูลแบบ Pair Programming อัตโนมัติ, การสั่งการ Subagents, การวางแผนสถาปัตยกรรมระบบ และการแก้ปัญหาโค้ดเชิงลึก",
+            en: "Harnessing Google Antigravity for autonomous pair-programming, specialized subagent delegation, codebase architecture synthesis, refactoring, and multi-step complex debugging."
+          },
+          useCases: [
+            { th: "การทำ Agentic Coding & Refactoring ร่วมกับ AI ช่วยลดเวลาในการพัฒนาและส่งมอบงาน", en: "Executed agentic pair programming and automated codebase refactoring, boosting delivery speed." },
+            { th: "การสั่งการและควบคุม Subagents ในการค้นหา วิเคราะห์ข้อผิดพลาด และทดสอบระบบแบบอัตโนมัติ", en: "Orchestrated autonomous subagents for context exploration, bug remediation, and automated testing." },
+            { th: "การประยุกต์ใช้ AI-assisted Data Wrangling ในการจัดเตรียมและแปลงชุดข้อมูลขนาดใหญ่", en: "Accelerated exploratory data wrangling and pipeline transformations with AI guidance." }
+          ],
+          relatedProjects: ["Portfolio Web Platform", "Thailand Petroleum Price TRACKER", "ENGiHack 2026 Energy Analytics"]
+        },
+        {
+          id: "edge-ai-tensorrt",
+          name: "Edge AI & Deep Learning Inference",
+          tag: "Edge Computing",
+          icon: "cpu",
+          summary: {
+            th: "การประยุกต์ใช้ Computer Vision และโมเดล Deep Learning บนบอร์ดประมวลผล Edge AI (NVIDIA Jetson) การเร่งความเร็วด้วย TensorRT และการประมวลผล On-Device แบบ 100% เพื่อรักษาความเป็นส่วนตัว",
+            en: "Deployment and acceleration of deep learning computer vision models on NVIDIA Jetson edge devices utilizing TensorRT inference optimization, ensuring 100% on-device data privacy."
+          },
+          useCases: [
+            { th: "การทำ TensorRT Optimization และ Quantization เร่งความเร็วการประมวลผลสูงถึง 30+ FPS", en: "Engineered TensorRT model quantization and engine serialization achieving 30+ FPS real-time throughput." },
+            { th: "ระบบตรวจจับท่าทางการล้มด้วย Skeleton Pose Estimation โดยไม่บันทึกภาพจริงของผู้ใช้งาน", en: "Deployed skeleton-based keypoint estimation for privacy-preserving, non-invasive fall detection." }
+          ],
+          relatedProjects: ["Edge-Native Privacy-Preserving Fall Detection System (ICSTI-MJU 2026 Bronze Medal)"]
+        },
+        {
+          id: "prompt-engineering",
+          name: "Prompt Engineering & Generative AI",
+          tag: "GenAI & LLMs",
+          icon: "sparkles",
+          summary: {
+            th: "การออกแบบคำสั่งเชิงระบบ (System Prompts), Few-shot Prompting และ Chain-of-Thought เพื่อสกัดข้อมูลวิจัย สรุปผลตัวเลขสถิติ และแปลงข้อมูลที่ไม่มีโครงสร้างให้เป็นตารางพร้อมวิเคราะห์",
+            en: "Architecting structured system prompts, few-shot prompting, and chain-of-thought strategies to extract unstructured documents, summarize statistical data, and automate data prep."
+          },
+          useCases: [
+            { th: "การออกแบบ Prompt สกัดข้อมูลจากรายงานวิจัยและเอกสารทางวิชาการให้อยู่ในรูป JSON/CSV", en: "Designed structured extraction prompts converting academic PDFs and technical reports into clean JSON." },
+            { th: "การใช้ LLMs ช่วยวิเคราะห์ความสัมพันธ์ของตัวแปรและสรุปประเด็นเชิงบริหาร (Executive Insights)", en: "Leveraged LLMs to synthesize complex correlation matrices into concise executive briefings." }
+          ],
+          relatedProjects: ["ICSTI-MJU Research Documentation", "Bilingual Portfolio Localization"]
+        }
+      ]
+    },
+    {
       id: "web-apps",
       category: {
         th: "เว็บแอปพลิเคชันข้อมูล & Frameworks",
@@ -535,24 +604,24 @@ const PORTFOLIO_DATA = {
         en: "Dev Stack"
       },
       summary: {
-        th: "สภาพแวดล้อมการทำงานแบบครบวงจร ได้แก่ VS Code, Jupyter, Git/GitHub, XAMPP (MySQL) และการทำ Presentation นำเสนอผลงาน",
-        en: "Full-stack development and data environments including VS Code, Jupyter, Git/GitHub, XAMPP (MySQL), and executive communication tools."
+        th: "สภาพแวดล้อมการทำงานแบบครบวงจร ได้แก่ VS Code, Google Antigravity, Jupyter, Git/GitHub, XAMPP (MySQL) และการนำเสนอผลงาน",
+        en: "Full-stack development and data environments including VS Code, Google Antigravity, Jupyter, Git/GitHub, XAMPP (MySQL), and executive communication tools."
       },
       icon: "terminal",
-      keyTools: ["VS Code", "Jupyter / Colab", "Git & GitHub", "XAMPP / MySQL", "Canva & PPT"],
+      keyTools: ["VS Code", "Google Antigravity", "Jupyter / Colab", "Git & GitHub", "XAMPP / MySQL"],
       items: [
         {
           id: "dev-tools",
-          name: "VS Code, RStudio & Jupyter",
+          name: "VS Code, Antigravity & Jupyter",
           tag: "Development Suite",
           icon: "terminal",
           summary: {
-            th: "สภาพแวดล้อมการทำงานหลักสำหรับการเขียนโค้ดวิเคราะห์ข้อมูล การสร้าง Notebook สำหรับงานวิจัย และการจัดการ Virtual Environment ด้วย Anaconda",
-            en: "Primary development environments for data analytics, interactive exploratory notebooks, and environment management with Anaconda."
+            th: "สภาพแวดล้อมการทำงานหลักสำหรับการเขียนโค้ดวิเคราะห์ข้อมูล การสร้าง Notebook สำหรับงานวิจัย และการใช้ Google Antigravity ร่วมกับ VS Code ในการพัฒนา",
+            en: "Primary development environments for data analytics, interactive exploratory notebooks, and AI-assisted development with Google Antigravity & VS Code."
           },
           useCases: [
             { th: "Jupyter Notebook & Google Colab สำหรับการทำ EDA และวิจัยข้อมูล", en: "Exploratory research workflows and data analysis notebook documentation." },
-            { th: "VS Code สำหรับการเขียนแอปพลิเคชันและการควบคุมเวอร์ชันด้วย Git", en: "Clean modular coding and version-controlled collaborative development." }
+            { th: "VS Code & Google Antigravity สำหรับการเขียนแอปพลิเคชันและการควบคุมเวอร์ชันด้วย Git", en: "Clean modular coding, AI-assisted development, and version-controlled collaborative workflows." }
           ],
           relatedProjects: ["All Data Projects"]
         },
@@ -997,7 +1066,7 @@ const PORTFOLIO_DATA = {
       ctaContact: { th: "ติดต่อฝึกงาน", en: "Contact Me" },
       ctaResume: { th: "เปิด / พิมพ์ Resume (PDF)", en: "View / Print Resume" },
       ctaTranscript: { th: "ทรานสคริปต์ (GPAX 3.66)", en: "Transcript (GPAX 3.66)" },
-      targetRoles: { th: "เป้าหมายตำแหน่งฝึกงาน: Data Science, Data Analyst, BI & EDA (On-site / Hybrid)", en: "Target Roles: Data Science, Data Analyst, BI & EDA (On-site / Hybrid)" }
+      targetRoles: { th: "เป้าหมายตำแหน่งฝึกงาน: Data Science, Data Analyst, AI & BI Developer (On-site / Hybrid)", en: "Target Roles: Data Science, Data Analyst, AI & BI Developer (On-site / Hybrid)" }
     },
     sections: {
       about: {
