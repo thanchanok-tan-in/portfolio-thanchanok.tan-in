@@ -326,7 +326,7 @@
                 <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">
                   ${t(cat.badge)}
                 </span>
-                <span class="text-xs text-slate-400 font-mono">0${catIdx + 1} / 05</span>
+                <span class="text-xs text-slate-400 font-mono">${String(catIdx + 1).padStart(2, '0')} / ${String(PORTFOLIO_DATA.skills.length).padStart(2, '0')}</span>
               </div>
               <h3 class="text-base sm:text-lg font-extrabold text-white group-hover:text-cyan-300 transition leading-snug">
                 ${t(cat.shortTitle || cat.category)}
@@ -888,12 +888,12 @@
               Looker Studio, Power BI, Tableau, Excel
             </div>
             <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
-              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">ML & Data Mining</strong>
-              EDA, Scikit-Learn, Orange, TensorRT
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">AI, ML & Edge</strong>
+              Scikit-Learn, Edge AI (TensorRT), GenAI
             </div>
             <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800 printable-section-box">
-              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">Tools & GIS</strong>
-              Git, GitHub, Jupyter, Leaflet.js GIS
+              <strong class="text-cyan-300 dark:text-cyan-300 print:text-black block mb-0.5 font-bold">Antigravity & Tools</strong>
+              Google Antigravity, Git, GitHub, Jupyter
             </div>
           </div>
         </div>
@@ -902,7 +902,7 @@
   }
 
   // =========================================================================
-  // Skill Category Deep-Dive Modal & Carousel Navigation (Categories 1 - 5)
+  // Skill Category Deep-Dive Modal & Carousel Navigation (Categories 1 - 6)
   // =========================================================================
   function openSkillModal(catIdx) {
     if (!PORTFOLIO_DATA || !PORTFOLIO_DATA.skills || PORTFOLIO_DATA.skills.length === 0) return;
