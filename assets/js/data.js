@@ -21,12 +21,12 @@ const PORTFOLIO_DATA = {
       en: "Data Science & Analytics Intern"
     },
     statusBadge: {
-      th: "พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4 เดือน)",
-      en: "Available for Internship (Nov 23, 2026 – Mar 12, 2027 or Immediately | Min 4 Months)"
+      th: "พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 3 เดือน)",
+      en: "Available for Internship (Nov 23, 2026 – Mar 12, 2027 or Immediately | Min 3 Months)"
     },
     internshipPeriod: {
-      th: "23 พฤศจิกายน 2569 – 12 มีนาคม 2570 หรือ ทันที (ระยะเวลาอย่างน้อย 4 เดือน)",
-      en: "Nov 23, 2026 – Mar 12, 2027 or Immediately (At least 4 months)"
+      th: "23 พฤศจิกายน 2569 – 12 มีนาคม 2570 หรือ ทันที (ระยะเวลาอย่างน้อย 3 เดือน)",
+      en: "Nov 23, 2026 – Mar 12, 2027 or Immediately (At least 3 months)"
     },
     internshipFormat: {
       th: "On-site / Hybrid (กรุงเทพฯ & ปริมณฑล หรือ จังหวัดขอนแก่น)",
