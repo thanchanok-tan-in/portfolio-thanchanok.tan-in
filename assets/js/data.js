@@ -895,9 +895,14 @@ const PORTFOLIO_DATA = {
       ],
       techStack: ["Leaflet.js (GIS)", "Chart.js", "PHP & MySQL", "GeoJSON", "Spatial Analytics", "Data Pipeline (CSV/JSON)"],
       links: [
+         {
+          label: { th: "🌐 ดูตัวอย่างผลงานจริง", en: "🌐 Interactive Dashboard" },
+          url: "https://thanchanok-tan-in.github.io/thailand-petroleum-tracker-ver1/",
+          icon: "external-link"
+        },
         {
-          label: { th: "📂 คลังโปรเจกต์ GitHub (Source Code)", en: "📂 Project Repository" },
-          url: "https://github.com/thanchanok-tan-in",
+          label: { th: "📂 คลังโปรเจกต์ GitHub (Source Code)", en: "📂 Project Repository (GitHub)" },
+          url: "https://github.com/thanchanok-tan-in/thailand-petroleum-tracker-ver1",
           icon: "code"
         }
       ]
