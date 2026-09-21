@@ -1,6 +1,6 @@
 /**
  * Interactive Bilingual Application Controller
- * Thanchanok Tan-in (Data Science & Analytics Intern)
+ * Thanchanok Tan-in (Data Scientist & Analytics Intern)
  */
 
 (function () {
