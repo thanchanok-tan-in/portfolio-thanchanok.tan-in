@@ -1,6 +1,6 @@
 /**
  * Portfolio Bilingual Data Store
- * Thanchanok Tan-in (Data Science & Analytics Intern)
+ * Thanchanok Tan-in (Data Scientist & Analytics Intern)
  * Extracted from intern_portfolio-profile-me.md and 1_portfolio_prompt_en.md
  */
 
@@ -17,8 +17,8 @@ const PORTFOLIO_DATA = {
       en: "Bam"
     },
     role: {
-      th: "Data Science & Analytics Intern",
-      en: "Data Science & Analytics Intern"
+      th: "Data Scientist & Analytics Intern",
+      en: "Data Scientist & Analytics Intern"
     },
     statusBadge: {
       th: "พร้อมเริ่มฝึกงาน (23 พ.ย. 69 – 12 มี.ค. 70 หรือทันที | อย่างน้อย 4 เดือน)",
@@ -1108,7 +1108,7 @@ const PORTFOLIO_DATA = {
       ctaContact: { th: "ติดต่อฝึกงาน", en: "Contact Me" },
       ctaResume: { th: "เปิด / พิมพ์ Resume (PDF)", en: "View / Print Resume" },
       ctaTranscript: { th: "ทรานสคริปต์ (GPAX 3.66)", en: "Transcript (GPAX 3.66)" },
-      targetRoles: { th: "เป้าหมายตำแหน่งฝึกงาน: Data Science, Data Analyst, AI & BI Developer (On-site / Hybrid)", en: "Target Roles: Data Science, Data Analyst, AI & BI Developer (On-site / Hybrid)" }
+      targetRoles: { th: "เป้าหมายตำแหน่งฝึกงาน: Data Scientist, Data Analyst, AI & BI Developer (On-site / Hybrid)", en: "Target Roles: Data Scientist, Data Analyst, AI & BI Developer (On-site / Hybrid)" }
     },
     sections: {
       about: {
